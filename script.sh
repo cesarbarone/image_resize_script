@@ -1,11 +1,5 @@
 #!/bin/bash
-images_directory="$1"
-cd "$images_directory"
-
-for file in *.jpg
-do
-  echo converting "$file" ...
-  convert  -resize 640X480  "$file" "$file"
-done
-
-cd -
+echo "Updating ruby script..."
+curl https://raw.githubusercontent.com/cesarbarone/image_resize_script/master/script.rb >> script.rb
+echo "Converting files..."
+ruby script.rb
