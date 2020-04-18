@@ -7,12 +7,11 @@ def resize
 end
 
 def merge
-  Dir.glob(['*.jpg', '*.JPG' ]).each do |image|
+  Dir.glob(['*.jpg']).each do |image|
     puts "merging #{image}..."
     `convert  bg.jpg #{image}  -gravity center -composite -compose over #{image}`
     `convert -rotate 90 #{image} #{image}`
   end
 end
-
 
 merge
